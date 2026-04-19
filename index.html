@@ -3,81 +3,81 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+
+<!-- THEME -->
+<link id="theme-style" rel="stylesheet" href="theme/default.css">
 
 <title>Malirainvitation</title>
 
 <style>
-body{background:#0f0a05;color:#fff;font-family:sans-serif}
+body{
+  background:var(--bg);
+  color:var(--text);
+  font-family:sans-serif;
+}
 
 /* GLASS */
 .glass{
-background:rgba(255,255,255,.05);
-backdrop-filter:blur(10px);
-border:1px solid rgba(255,255,255,.1);
-border-radius:20px;
+  background:var(--card);
+  backdrop-filter:blur(10px);
+  border-radius:20px;
+  border:1px solid rgba(255,255,255,0.1);
 }
 
 /* BUTTON */
 .btn{
-background:linear-gradient(135deg,#8b5e34,#d4a373);
-padding:10px 20px;
-border-radius:10px;
+  background:linear-gradient(135deg,var(--primary),var(--secondary));
+  padding:10px 20px;
+  border-radius:10px;
+  color:#fff;
 }
 
 /* CATEGORY */
 .cat{
-padding:8px 14px;
-border-radius:999px;
-background:#2a1a10;
-font-size:12px;
-cursor:pointer;
+  padding:8px 14px;
+  border-radius:999px;
+  font-size:12px;
+  cursor:pointer;
+  background:#2a1a10;
+  color:#fff;
 }
 .cat.active{
-background:linear-gradient(135deg,#8b5e34,#d4a373);
+  background:linear-gradient(135deg,var(--primary),var(--secondary));
 }
 
 /* SKELETON */
 .skeleton{
-background:linear-gradient(90deg,#2a1a10,#3a2518,#2a1a10);
-background-size:200% 100%;
-animation:loading 1s infinite;
-border-radius:10px;
+  background:linear-gradient(90deg,#2a1a10,#3a2518,#2a1a10);
+  background-size:200% 100%;
+  animation:loading 1s infinite;
+  border-radius:10px;
 }
 @keyframes loading{0%{background-position:200%}100%{-200%}}
 
-/* CARD HOVER */
-.card:hover{
-transform:translateY(-5px);
-transition:.3s;
-}
-
-/* MOBILE NAV */
-.mobile-nav{
-position:fixed;bottom:0;width:100%;
-background:#1a120c;display:none;
-justify-content:space-around;padding:10px;
-}
-@media(max-width:768px){
-.mobile-nav{display:flex}
-body{padding-bottom:70px}
-}
+.card:hover{transform:translateY(-5px);transition:.3s}
 </style>
 </head>
 
 <body>
 
 <!-- HEADER -->
-<header class="glass sticky top-0 z-50 p-4 flex justify-between">
+<header class="glass p-4 flex justify-between items-center">
 <b>Malirainvitation</b>
-<a href="#paket" class="btn text-white">Lihat Paket</a>
+
+<div class="flex gap-2">
+<button onclick="setTheme('default')" class="cat">Default</button>
+<button onclick="setTheme('gold')" class="cat">Gold</button>
+<button onclick="setTheme('dark')" class="cat">Dark</button>
+</div>
 </header>
 
 <!-- HERO -->
 <section class="text-center py-20">
 <h1 class="text-4xl font-bold mb-4">Undangan Digital Premium</h1>
-<p class="opacity-70 mb-6">Lebih praktis, modern & berkesan hanya dengan 1 link</p>
-<a href="#tema" class="btn text-white">Pilih Tema</a>
+<p class="opacity-70 mb-6">Tema bisa ganti warna 🔥</p>
+<a href="#tema" class="btn">Lihat Tema</a>
 </section>
 
 <!-- TEMA -->
@@ -91,56 +91,41 @@ body{padding-bottom:70px}
 
 </section>
 
-<!-- PAKET PREMIUM -->
-<section id="paket" class="py-16 text-center max-w-6xl mx-auto px-4">
-<h2 class="text-3xl font-bold mb-3">Pilih Paket Terbaikmu</h2>
-<p class="opacity-70 mb-10">Sesuaikan dengan kebutuhan acara kamu ✨</p>
+<!-- PAKET -->
+<section id="paket" class="py-16 text-center max-w-6xl mx-auto">
+<h2 class="text-3xl font-bold mb-3">Pilih Paket</h2>
+<p class="opacity-70 mb-10">Sesuaikan kebutuhan kamu ✨</p>
 
 <div class="grid md:grid-cols-3 gap-6">
 
-<!-- BASIC -->
 <div class="glass p-6 card">
-<h3 class="text-xl mb-2">Basic</h3>
-<p class="text-3xl font-bold mb-4">65K</p>
-
-<ul class="text-sm text-left space-y-2 mb-6">
-<li>✔ 5 Revisi</li>
+<h3>Basic</h3>
+<p class="text-2xl">65K</p>
+<ul class="text-sm mt-3">
 <li>✔ RSVP</li>
-<li>✔ Maps Lokasi</li>
+<li>✔ Maps</li>
+</ul>
+<a href="#" class="btn block mt-4">Pesan</a>
+</div>
+
+<div class="glass p-6 card border-2 border-yellow-400">
+<h3>Premium</h3>
+<p class="text-2xl">75K</p>
+<ul class="text-sm mt-3">
+<li>✔ Galeri</li>
 <li>✔ Musik</li>
 </ul>
-
-<a href="https://wa.me/6281279281358?text=Saya mau paket Basic" class="btn text-white w-full block">Pesan</a>
+<a href="#" class="btn block mt-4">Pesan</a>
 </div>
 
-<!-- PREMIUM -->
-<div class="glass p-6 border-2 border-yellow-400 card scale-105">
-<h3 class="text-xl mb-2">Premium</h3>
-<p class="text-3xl font-bold mb-4">75K</p>
-
-<ul class="text-sm text-left space-y-2 mb-6">
-<li>✔ 10 Revisi</li>
-<li>✔ Galeri Foto</li>
-<li>✔ RSVP</li>
-<li>✔ Musik + Animasi</li>
-</ul>
-
-<a href="https://wa.me/6281279281358?text=Saya mau paket Premium" class="btn text-white w-full block">Pesan</a>
-</div>
-
-<!-- PRIORITAS -->
 <div class="glass p-6 card">
-<h3 class="text-xl mb-2">Prioritas</h3>
-<p class="text-3xl font-bold mb-4">100K</p>
-
-<ul class="text-sm text-left space-y-2 mb-6">
-<li>✔ Full Fitur</li>
-<li>✔ Love Story</li>
-<li>✔ Custom Design</li>
-<li>✔ Prioritas Pengerjaan</li>
+<h3>Prioritas</h3>
+<p class="text-2xl">100K</p>
+<ul class="text-sm mt-3">
+<li>✔ Full fitur</li>
+<li>✔ Custom</li>
 </ul>
-
-<a href="https://wa.me/6281279281358?text=Saya mau paket Prioritas" class="btn text-white w-full block">Pesan</a>
+<a href="#" class="btn block mt-4">Pesan</a>
 </div>
 
 </div>
@@ -148,31 +133,44 @@ body{padding-bottom:70px}
 
 <!-- FOOTER -->
 <footer class="text-center py-10 border-t border-white/10">
-
-<h3 class="text-lg mb-3">Malirainvitation</h3>
+<h3 class="mb-3">Malirainvitation</h3>
 
 <div class="flex justify-center gap-4 mb-4">
-<a href="https://instagram.com/malirainvitation.co">📸</a>
-<a href="https://wa.me/6281279281358">💬</a>
+<a href="#">📸</a>
+<a href="#">💬</a>
 <a href="#">🎵</a>
 </div>
 
-<p class="text-xs opacity-50">© 2026 All Rights Reserved</p>
-
+<p class="text-xs opacity-50">© 2026</p>
 </footer>
 
 <script>
-const baseUrl="https://webinvit.id";
-const phone="6281279281358";
+/* ================= THEME SYSTEM ================= */
+function setTheme(name){
+  document.getElementById("theme-style").href = "theme/"+name+".css";
+  localStorage.setItem("theme",name);
+}
 
+const urlParams=new URLSearchParams(window.location.search);
+const urlTheme=urlParams.get("theme");
+
+if(urlTheme){
+  setTheme(urlTheme);
+}else{
+  const savedTheme=localStorage.getItem("theme")||"default";
+  setTheme(savedTheme);
+}
+
+/* ================= DATA ================= */
+const baseUrl="https://webinvit.id";
 let allThemes=[];
-let activeCategory="Semua";
 let currentPage=1;
 const perPage=8;
 
-/* CATEGORY */
-const categories=["Semua","Wedding","Kids & Birthday","Aqiqah & Tasmiyah","Tasyakuran Khitan","Umum & Seminar"];
+const categories=["Semua","Wedding","Aqiqah","Khitan","Birthday","Umum"];
+let activeCategory="Semua";
 
+/* CATEGORY */
 categories.forEach(cat=>{
 let btn=document.createElement("button");
 btn.innerText=cat;
@@ -190,17 +188,14 @@ applyFilter();
 document.getElementById("categories").appendChild(btn);
 });
 
-/* CATEGORY FIX */
+/* CATEGORY LOGIC */
 function getCategory(name){
 let n=name.toLowerCase();
-
-if(n.includes("aqiqah")||n.includes("baby")||n.includes("tasmiyah")) return "Aqiqah & Tasmiyah";
-if(n.includes("seminar")||n.includes("meeting")||n.includes("event")) return "Umum & Seminar";
-if(n.includes("wedding")||n.includes("nikah")) return "Wedding";
-if(n.includes("ulang")||n.includes("birthday")) return "Kids & Birthday";
-if(n.includes("khitan")) return "Tasyakuran Khitan";
-
-return "Other";
+if(n.includes("aqiqah")) return "Aqiqah";
+if(n.includes("khitan")) return "Khitan";
+if(n.includes("wedding")) return "Wedding";
+if(n.includes("birthday")) return "Birthday";
+return "Umum";
 }
 
 /* SKELETON */
@@ -208,10 +203,7 @@ function showSkeleton(){
 let el=document.getElementById("themes");
 el.innerHTML="";
 for(let i=0;i<8;i++){
-el.innerHTML+=`<div class="glass p-2">
-<div class="skeleton h-32"></div>
-<div class="skeleton h-4 mt-2"></div>
-</div>`;
+el.innerHTML+=`<div class="glass p-2"><div class="skeleton h-32"></div></div>`;
 }
 }
 
@@ -256,7 +248,7 @@ el.innerHTML+=`
 <div class="glass p-2 card">
 <img src="${t.featured_image}" loading="lazy">
 <p class="mt-2">${t.name}</p>
-<a href="https://wa.me/${phone}?text=${encodeURIComponent("Pesan "+t.name)}" class="btn block mt-2 text-center">Pesan</a>
+<a href="${baseUrl}/preview/${t.slug}" target="_blank" class="btn block mt-2 text-center">Preview</a>
 </div>`;
 });
 
