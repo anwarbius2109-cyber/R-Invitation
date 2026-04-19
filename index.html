@@ -4,42 +4,57 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>MaliraInvitation</title>
+<title>Malirainvitation</title>
 <script src="https://cdn.tailwindcss.com"></script>
 
 <style>
-body {
+body{
   background: linear-gradient(135deg,#1c1208,#2b1a0d);
   color:white;
 }
 
-/* PAGE SYSTEM */
-.page {display:none;}
-.page.active {display:block;}
-
 /* GLASS */
-.glass {
+.glass{
   background: rgba(255,255,255,0.05);
   backdrop-filter: blur(10px);
-  border-radius: 15px;
-  padding: 20px;
+  border-radius:15px;
 }
 
 /* BUTTON */
-.btn {
+.btn{
   background: linear-gradient(135deg,#c08b4f,#8b5e34);
-  padding:10px 18px;
+  padding:8px 16px;
   border-radius:10px;
 }
 
+/* NAV MOBILE */
+.mobile-nav{
+  position:fixed;
+  bottom:0;
+  width:100%;
+  display:flex;
+  justify-content:space-around;
+  background:#2b1a0d;
+  padding:8px;
+  z-index:999;
+}
+.mobile-nav a{
+  font-size:11px;
+  text-align:center;
+}
+
+@media(min-width:768px){
+  .mobile-nav{display:none;}
+}
+
 /* CATEGORY */
-#categories button {
-  padding:6px 12px;
-  margin:3px;
+#categories button{
+  padding:6px 10px;
+  margin:4px;
   border-radius:999px;
   background:#ffffff20;
 }
-.category-active {
+.category-active{
   background:#c08b4f;
 }
 </style>
@@ -47,135 +62,220 @@ body {
 
 <body>
 
-<!-- NAV -->
-<div class="flex justify-between p-4 glass sticky top-0">
-  <b>MaliraInvitation</b>
-  <div class="flex gap-2">
-    <button onclick="showPage('home')" class="btn">Home</button>
-    <button onclick="showPage('paket')" class="btn">Paket</button>
-  </div>
+<!-- ================= HEADER ================= -->
+<header class="glass sticky top-0 z-50">
+<div class="max-w-6xl mx-auto flex justify-between items-center p-3">
+
+<!-- LOGO -->
+<div class="flex items-center gap-2">
+<img src="https://cdn-icons-png.flaticon.com/512/3209/3209265.png" width="30">
+<b>Malirainvitation</b>
 </div>
 
-<!-- ================= HOME ================= -->
-<div id="home" class="page active">
+<!-- MENU DESKTOP -->
+<nav class="hidden md:flex gap-4 text-sm">
+<a href="#home">Home</a>
+<a href="#problem">Problem</a>
+<a href="#solusi">Solusi</a>
+<a href="#tema">Tema</a>
+<a href="#testimoni">Testimoni</a>
+<a href="#about">About</a>
+<a href="#paket">Paket</a>
+<a href="#faq">FAQs</a>
+</nav>
 
-<!-- HERO -->
-<section class="text-center py-20">
-<h1 class="text-4xl font-bold mb-4">Undangan Digital Premium</h1>
-<p class="opacity-70">Modern, cepat & elegan</p>
+</div>
+</header>
+
+<!-- ================= HERO ================= -->
+<section id="home" class="text-center py-20">
+<h1 class="text-4xl font-bold">Undangan Digital Premium</h1>
+<p class="opacity-70">Modern, elegan & praktis</p>
 </section>
 
-<!-- PROBLEM -->
-<section class="text-center py-12">
-<h2 class="text-2xl">Undangan cetak ribet & mahal</h2>
+<!-- ================= PROBLEM ================= -->
+<section id="problem" class="text-center py-16">
+<h2 class="text-2xl">Undangan cetak mahal & ribet</h2>
 <p class="opacity-70">Sekarang cukup kirim link</p>
 </section>
 
-<!-- SOLUSI -->
-<section class="py-12 text-center">
+<!-- ================= SOLUSI ================= -->
+<section id="solusi" class="py-16 text-center">
 <h2 class="text-2xl mb-6">Fitur Unggulan</h2>
+
 <div class="grid md:grid-cols-3 gap-4 max-w-4xl mx-auto">
-<div class="glass">500+ Tema</div>
-<div class="glass">RSVP & Buku Tamu</div>
-<div class="glass">Google Maps</div>
-<div class="glass">Galeri Foto</div>
-<div class="glass">Musik Latar</div>
-<div class="glass">Ucapan & Doa</div>
+<div class="glass p-4">500+ Tema</div>
+<div class="glass p-4">RSVP & Buku Tamu</div>
+<div class="glass p-4">Google Maps</div>
+<div class="glass p-4">Galeri Foto</div>
+<div class="glass p-4">Musik Latar</div>
+<div class="glass p-4">Ucapan & Doa</div>
 </div>
 </section>
 
-<!-- TEMA -->
-<section class="py-16">
+<!-- ================= TEMA ================= -->
+<section id="tema" class="py-16">
 <div class="max-w-6xl mx-auto px-4">
 
+<!-- SEARCH -->
 <input id="searchInput"
 placeholder="Cari tema..."
 class="w-full p-3 rounded text-black mb-4">
 
-<div id="categories" class="mb-4"></div>
+<!-- CATEGORY -->
+<div id="categories" class="flex flex-wrap justify-center mb-4"></div>
 
+<!-- THEMES -->
 <div id="themes"
 class="grid grid-cols-2 md:grid-cols-4 gap-4"></div>
 
 </div>
 </section>
 
-</div>
+<!-- ================= TESTIMONI ================= -->
+<section id="testimoni" class="text-center py-16">
+<h2 class="text-2xl mb-4">Testimoni</h2>
+<p class="opacity-70">Banyak pelanggan puas menggunakan layanan kami</p>
+</section>
+
+<!-- ================= ABOUT ================= -->
+<section id="about" class="text-center py-16">
+<h2 class="text-2xl">Tentang Kami</h2>
+<p class="opacity-70">Platform undangan digital modern & terpercaya</p>
+</section>
 
 <!-- ================= PAKET ================= -->
-<div id="paket" class="page">
-
-<section class="py-20 text-center">
-<h2 class="text-3xl mb-10">Paket Undangan</h2>
+<section id="paket" class="py-16 text-center">
+<h2 class="text-3xl mb-8">Paket</h2>
 
 <div class="grid md:grid-cols-3 gap-6 max-w-5xl mx-auto">
 
-<!-- BASIC -->
-<div class="glass">
-<h3 class="text-xl font-bold">Basic</h3>
-<p class="text-lg">Rp65K</p>
-<ul class="text-sm mt-4 space-y-1">
-<li>✔ RSVP & Buku Tamu</li>
-<li>✔ Google Maps</li>
-<li>✔ Musik Latar</li>
-<li>✔ Amplop Digital</li>
-<li>❌ Tanpa Galeri</li>
+<div class="glass p-5">
+<h3>Basic</h3>
+<p>Rp65K</p>
+<ul class="text-sm mt-3">
+<li>✔ RSVP</li>
+<li>✔ Maps</li>
+<li>✔ Musik</li>
+<li>✔ Amplop</li>
+<li>❌ Galeri</li>
 </ul>
 </div>
 
-<!-- PREMIUM -->
-<div class="glass border-2 border-yellow-400">
-<h3 class="text-xl font-bold">Premium</h3>
-<p class="text-lg">Rp75K</p>
-<ul class="text-sm mt-4 space-y-1">
-<li>✔ RSVP & Buku Tamu</li>
-<li>✔ Google Maps</li>
-<li>✔ Musik Latar</li>
-<li>✔ Amplop Digital</li>
-<li>✔ Galeri Foto</li>
+<div class="glass p-5 border border-yellow-400">
+<h3>Premium</h3>
+<p>Rp75K</p>
+<ul class="text-sm mt-3">
+<li>✔ RSVP</li>
+<li>✔ Maps</li>
+<li>✔ Musik</li>
+<li>✔ Amplop</li>
+<li>✔ Galeri</li>
 </ul>
 </div>
 
-<!-- ULTIMATE -->
-<div class="glass">
-<h3 class="text-xl font-bold">Ultimate</h3>
-<p class="text-lg">Rp100K</p>
-<ul class="text-sm mt-4 space-y-1">
-<li>✔ Semua fitur Premium</li>
+<div class="glass p-5">
+<h3>Ultimate</h3>
+<p>Rp100K</p>
+<ul class="text-sm mt-3">
+<li>✔ Semua fitur</li>
 <li>✔ Love Story</li>
 <li>✔ Turut Mengundang</li>
-<li>✔ Custom Request</li>
+<li>✔ Custom</li>
 </ul>
 </div>
 
 </div>
-
 </section>
 
+<!-- ================= FAQ ================= -->
+<section id="faq" class="text-center py-16">
+<h2 class="text-2xl">FAQ</h2>
+<p class="opacity-70">Proses ±1 jam</p>
+</section>
+
+<!-- ================= MOBILE NAV ================= -->
+<div class="mobile-nav">
+<a href="#home">Home</a>
+<a href="#problem">Problem</a>
+<a href="#solusi">Solusi</a>
+<a href="#tema">Tema</a>
+<a href="#paket">Paket</a>
 </div>
 
-<!-- SCRIPT -->
+<!-- ================= SCRIPT ================= -->
 <script>
 const baseUrl = "https://webinvit.id";
 
 let allThemes = [];
-let currentCategory = null;
+let currentCategory = "Semua";
 
-// PAGE SWITCH
-function showPage(id){
-  document.querySelectorAll(".page").forEach(p=>p.classList.remove("active"));
-  document.getElementById(id).classList.add("active");
-}
+/* CATEGORY FIX MANUAL */
+const categories = [
+"Semua",
+"Wedding",
+"Kids & Birthday",
+"Aqiqah & Tasmiyah",
+"Tasyakuran Khitan",
+"Umum & Seminar",
+"Christmas & New Year",
+"Party & Dinner",
+"School & Graduation"
+];
 
-// LOAD THEMES (ringan)
+// LOAD
 async function loadThemes(){
-  const res = await fetch(baseUrl + "/seller/api/v1/products/websites?limit=30");
+  const res = await fetch(baseUrl + "/seller/api/v1/products/websites?limit=50");
   const json = await res.json();
   allThemes = json.data.data;
 
   renderThemes(allThemes);
   buildCategories();
 }
+
+// CATEGORY UI
+function buildCategories(){
+  const el = document.getElementById("categories");
+  el.innerHTML = "";
+
+  categories.forEach(cat=>{
+    const btn = document.createElement("button");
+    btn.innerText = cat;
+
+    if(cat==="Semua") btn.classList.add("category-active");
+
+    btn.onclick = ()=>{
+      currentCategory = cat;
+      document.querySelectorAll("#categories button").forEach(b=>b.classList.remove("category-active"));
+      btn.classList.add("category-active");
+      applyFilter();
+    };
+
+    el.appendChild(btn);
+  });
+}
+
+// FILTER FIX
+function applyFilter(){
+  const keyword = document.getElementById("searchInput").value.toLowerCase();
+
+  const filtered = allThemes.filter(t=>{
+    const nameMatch = t.name.toLowerCase().includes(keyword);
+
+    let categoryMatch = true;
+
+    if(currentCategory !== "Semua"){
+      categoryMatch = t.name.toLowerCase().includes(currentCategory.toLowerCase());
+    }
+
+    return nameMatch && categoryMatch;
+  });
+
+  renderThemes(filtered);
+}
+
+// SEARCH FIX
+document.getElementById("searchInput").addEventListener("input",applyFilter);
 
 // RENDER
 function renderThemes(data){
@@ -184,48 +284,11 @@ function renderThemes(data){
 
   data.forEach(t=>{
     el.innerHTML += `
-    <div class="glass">
+    <div class="glass p-2">
       <img src="${t.featured_image}" class="rounded mb-2">
       <b>${t.name}</b>
     </div>`;
   });
-}
-
-// CATEGORY
-function buildCategories(){
-  const cats = [...new Set(allThemes.map(t=>t.category_id))];
-  const el = document.getElementById("categories");
-
-  el.innerHTML = `<button class="category-active" onclick="setCat(null,this)">Semua</button>`;
-
-  cats.forEach(c=>{
-    el.innerHTML += `<button onclick="setCat(${c},this)">Kategori ${c}</button>`;
-  });
-}
-
-function setCat(id,btn){
-  currentCategory = id;
-
-  document.querySelectorAll("#categories button")
-  .forEach(b=>b.classList.remove("category-active"));
-
-  btn.classList.add("category-active");
-
-  applyFilter();
-}
-
-// SEARCH
-document.getElementById("searchInput").addEventListener("input",applyFilter);
-
-function applyFilter(){
-  const key = document.getElementById("searchInput").value.toLowerCase();
-
-  const filtered = allThemes.filter(t=>{
-    return (!currentCategory || t.category_id==currentCategory)
-    && t.name.toLowerCase().includes(key);
-  });
-
-  renderThemes(filtered);
 }
 
 loadThemes();
