@@ -5,262 +5,272 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
 <title>Malirainvitation.co</title>
 
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-
 <style>
-/* CATEGORY */
-#categories {
-  display:flex;
-  flex-wrap:wrap;
-  gap:8px;
-  margin-bottom:20px;
+/* ===== GLOBAL ===== */
+body {
+  background: linear-gradient(135deg, #fdf8f3, #f3e8dd);
+  font-family: sans-serif;
 }
+
+/* TEXT */
+.text-gradient {
+  background: linear-gradient(90deg, #7b4b2a, #c8a27a);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* GLASS */
+.glass {
+  background: rgba(255,255,255,0.6);
+  backdrop-filter: blur(14px);
+  border: 1px solid rgba(255,255,255,0.4);
+}
+
+/* BUTTON */
+.btn-premium {
+  background: linear-gradient(135deg, #7b4b2a, #c8a27a);
+  color: white;
+  transition: 0.3s;
+}
+.btn-premium:hover {
+  opacity: 0.9;
+  transform: scale(1.03);
+}
+
+/* CARD */
+.card {
+  background: rgba(255,255,255,0.7);
+  backdrop-filter: blur(10px);
+  border-radius: 14px;
+  transition: 0.3s;
+}
+.card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 15px 40px rgba(0,0,0,0.1);
+}
+
+/* CATEGORY */
 #categories button {
+  padding:6px 14px;
+  border-radius:999px;
   background:#eee;
-  padding:6px 12px;
-  border-radius:20px;
-  font-size:12px;
 }
 .category-active {
-  background:#6d28d9;
+  background: linear-gradient(135deg, #7b4b2a, #c8a27a);
   color:white;
 }
-
-/* MOBILE MENU */
-.mobile-menu {
-  display:none;
-}
-.mobile-menu.active {
-  display:block;
-}
 </style>
-
 </head>
 
 <body>
 
-<!-- NAV -->
-<header class="sticky top-0 bg-white shadow z-50">
+<!-- ===== HEADER ===== -->
+<header class="sticky top-0 z-50 glass">
   <div class="max-w-6xl mx-auto flex justify-between items-center p-4">
+    <h1 class="font-bold text-lg text-gradient">Malirainvitation</h1>
 
-    <h1 class="font-bold">Malirainvitation</h1>
-
-    <!-- MENU DESKTOP -->
-    <div class="hidden md:flex gap-4 text-sm">
+    <nav class="hidden md:flex gap-6 text-sm">
       <a href="#home">Home</a>
       <a href="#problem">Problem</a>
       <a href="#solusi">Solusi</a>
       <a href="#tema">Tema</a>
       <a href="#paket">Paket</a>
       <a href="#faq">FAQ</a>
-    </div>
-
-    <!-- BUTTON -->
-    <a href="https://wa.me/6281279281358"
-      class="hidden md:block bg-purple-600 text-white px-4 py-2 rounded">
-      Hubungi
-    </a>
-
-    <!-- HAMBURGER -->
-    <button onclick="toggleMenu()" class="md:hidden text-2xl">
-      ☰
-    </button>
-  </div>
-
-  <!-- MOBILE MENU -->
-  <div id="mobileMenu" class="mobile-menu bg-white border-t p-4 space-y-2 md:hidden">
-    <a href="#home" onclick="toggleMenu()">Home</a><br>
-    <a href="#problem" onclick="toggleMenu()">Problem</a><br>
-    <a href="#solusi" onclick="toggleMenu()">Solusi</a><br>
-    <a href="#tema" onclick="toggleMenu()">Tema</a><br>
-    <a href="#paket" onclick="toggleMenu()">Paket</a><br>
-    <a href="#faq" onclick="toggleMenu()">FAQ</a><br>
+    </nav>
 
     <a href="https://wa.me/6281279281358"
-      class="block bg-purple-600 text-white px-4 py-2 rounded text-center">
+      class="btn-premium px-4 py-2 rounded">
       Hubungi
     </a>
   </div>
 </header>
 
-<!-- HERO -->
-<section id="home" class="text-center py-24 bg-gray-100">
-  <h1 class="text-4xl font-bold mb-4">Undangan Digital Modern</h1>
-  <p class="mb-6">Praktis, elegan & kekinian</p>
-  <a href="#tema" class="bg-purple-600 text-white px-6 py-3 rounded">Lihat Tema</a>
+<!-- ===== HERO ===== -->
+<section id="home" class="text-center py-32">
+  <h1 class="text-5xl font-bold mb-6">
+    Undangan Digital <br>
+    <span class="text-gradient">Elegant & Modern</span>
+  </h1>
+  <p class="mb-8 text-lg text-gray-600">
+    Praktis, mewah, dan cukup kirim link
+  </p>
+  <a href="#tema" class="btn-premium px-8 py-3 rounded">
+    Lihat Tema
+  </a>
 </section>
 
-<!-- PROBLEM -->
-<section id="problem" class="py-16 text-center max-w-4xl mx-auto">
-  <h2 class="text-2xl font-bold">
+<!-- ===== PROBLEM ===== -->
+<section id="problem" class="py-20 text-center max-w-4xl mx-auto">
+  <h2 class="text-3xl font-bold">
     Undangan cetak mahal & ribet.
-    <span class="text-purple-600">Gunakan undangan digital</span>
+    <span class="text-gradient">Saatnya beralih ke digital</span>
   </h2>
 </section>
 
-<!-- SOLUSI -->
-<section id="solusi" class="py-16 bg-gray-100">
+<!-- ===== SOLUSI ===== -->
+<section id="solusi" class="py-20">
   <div class="max-w-6xl mx-auto grid md:grid-cols-3 gap-6 px-4">
-    <div class="bg-white p-6 rounded shadow">500+ Tema</div>
-    <div class="bg-white p-6 rounded shadow">RSVP</div>
-    <div class="bg-white p-6 rounded shadow">Google Maps</div>
+
+    <div class="card p-6 text-center">
+      <h3 class="font-bold mb-2">500+ Tema</h3>
+      <p>Elegan & kekinian</p>
+    </div>
+
+    <div class="card p-6 text-center">
+      <h3 class="font-bold mb-2">RSVP</h3>
+      <p>Tracking tamu otomatis</p>
+    </div>
+
+    <div class="card p-6 text-center">
+      <h3 class="font-bold mb-2">Maps</h3>
+      <p>Arah lokasi akurat</p>
+    </div>
+
   </div>
 </section>
 
-<!-- TEMA -->
-<section id="tema" class="py-16">
+<!-- ===== TEMA ===== -->
+<section id="tema" class="py-20">
   <div class="max-w-6xl mx-auto px-4">
 
-    <input id="searchInput"
-      placeholder="Cari tema..."
-      class="w-full border p-3 rounded mb-4">
+    <h2 class="text-4xl font-bold text-center mb-6">
+      Pilih <span class="text-gradient">Tema</span>
+    </h2>
 
-    <!-- KATEGORI -->
-    <div id="categories"></div>
+    <div class="glass p-3 rounded mb-4">
+      <input id="searchInput"
+        placeholder="Cari tema..."
+        class="w-full bg-transparent outline-none">
+    </div>
 
-    <div id="themes"
-      class="grid grid-cols-2 md:grid-cols-4 gap-4"></div>
+    <div id="categories" class="flex flex-wrap gap-2 justify-center mb-6"></div>
+
+    <div id="themes" class="grid grid-cols-2 md:grid-cols-4 gap-6"></div>
 
   </div>
 </section>
 
-<!-- PAKET -->
-<section id="paket" class="py-16 bg-gray-100">
+<!-- ===== PAKET ===== -->
+<section id="paket" class="py-20">
   <div class="max-w-6xl mx-auto grid md:grid-cols-3 gap-6 px-4">
 
-    <div class="bg-white p-6 rounded shadow text-center">
-      <h3 class="font-bold">Basic</h3>
-      <p class="text-2xl">65K</p>
-      <ul class="text-sm text-left">
+    <div class="card p-6 text-center">
+      <h3 class="text-xl font-bold">Basic</h3>
+      <p class="text-3xl my-3">65K</p>
+      <ul class="text-sm text-left mb-4">
         <li>✔ RSVP</li>
         <li>✔ Maps</li>
         <li>✔ Musik</li>
       </ul>
+      <a href="#" class="btn-premium px-4 py-2 rounded block">Pesan</a>
     </div>
 
-    <div class="bg-white p-6 rounded shadow text-center">
-      <h3 class="font-bold">Premium</h3>
-      <p class="text-2xl">75K</p>
-      <ul class="text-sm text-left">
-        <li>✔ Galeri</li>
+    <div class="card p-6 text-center border-2 border-yellow-400">
+      <h3 class="text-xl font-bold">Premium</h3>
+      <p class="text-3xl my-3">75K</p>
+      <ul class="text-sm text-left mb-4">
+        <li>✔ Galeri Foto</li>
         <li>✔ RSVP</li>
         <li>✔ Maps</li>
       </ul>
+      <a href="#" class="btn-premium px-4 py-2 rounded block">Pesan</a>
     </div>
 
-    <div class="bg-white p-6 rounded shadow text-center">
-      <h3 class="font-bold">Prioritas</h3>
-      <p class="text-2xl">100K</p>
-      <ul class="text-sm text-left">
+    <div class="card p-6 text-center">
+      <h3 class="text-xl font-bold">Prioritas</h3>
+      <p class="text-3xl my-3">100K</p>
+      <ul class="text-sm text-left mb-4">
         <li>✔ Semua fitur</li>
         <li>✔ Love Story</li>
       </ul>
+      <a href="#" class="btn-premium px-4 py-2 rounded block">Pesan</a>
     </div>
 
   </div>
 </section>
 
-<!-- FAQ -->
-<section id="faq" class="py-16 text-center">
-  <h2 class="text-2xl font-bold">FAQ</h2>
-  <p>Proses cepat & mudah</p>
+<!-- ===== FAQ ===== -->
+<section id="faq" class="py-20 text-center">
+  <h2 class="text-3xl font-bold mb-4">FAQ</h2>
+  <p>Proses cepat ±1 jam, kirim unlimited</p>
 </section>
 
-<!-- SCRIPT -->
+<!-- ===== FOOTER ===== -->
+<footer class="text-center py-8 text-gray-500">
+  © Malirainvitation.co
+</footer>
+
+<!-- ===== SCRIPT ===== -->
 <script>
 const baseUrl = "https://webinvit.id";
-
 let allThemes = [];
 let currentCategory = null;
 
-// MOBILE MENU
-function toggleMenu() {
-  document.getElementById("mobileMenu").classList.toggle("active");
-}
-
-// LOAD THEMES
+// LOAD
 async function loadThemes() {
   const res = await fetch(baseUrl + "/seller/api/v1/products/websites?limit=40");
   const json = await res.json();
-
   allThemes = json.data.data;
   renderThemes(allThemes);
 }
 
-// LOAD CATEGORY
+// CATEGORY
 async function loadCategories() {
   const res = await fetch(baseUrl + "/seller/api/v1/categories");
   const json = await res.json();
 
   const container = document.getElementById("categories");
 
-  // ALL BUTTON
   const allBtn = document.createElement("button");
   allBtn.textContent = "Semua";
   allBtn.classList.add("category-active");
-
-  allBtn.onclick = () => {
-    currentCategory = null;
-    setActive(allBtn);
-    applyFilter();
-  };
-
+  allBtn.onclick = () => { currentCategory=null; setActive(allBtn); applyFilter(); };
   container.appendChild(allBtn);
 
-  json.data.forEach(cat => {
-    const btn = document.createElement("button");
-    btn.textContent = cat.name;
-
-    btn.onclick = () => {
-      currentCategory = cat.id;
-      setActive(btn);
-      applyFilter();
-    };
-
+  json.data.forEach(cat=>{
+    const btn=document.createElement("button");
+    btn.textContent=cat.name;
+    btn.onclick=()=>{ currentCategory=cat.id; setActive(btn); applyFilter(); };
     container.appendChild(btn);
   });
 }
 
 // FILTER
-function applyFilter() {
-  const keyword = document.getElementById("searchInput").value.toLowerCase();
+function applyFilter(){
+  const keyword=document.getElementById("searchInput").value.toLowerCase();
 
-  const filtered = allThemes.filter(t => {
-    const matchName = t.name.toLowerCase().includes(keyword);
-    const matchCategory = currentCategory ? t.category_id == currentCategory : true;
-
-    return matchName && matchCategory;
+  const filtered=allThemes.filter(t=>{
+    return t.name.toLowerCase().includes(keyword) &&
+    (currentCategory ? t.category_id==currentCategory : true);
   });
 
   renderThemes(filtered);
 }
 
-// ACTIVE CATEGORY
-function setActive(el) {
-  document.querySelectorAll("#categories button").forEach(b => b.classList.remove("category-active"));
+function setActive(el){
+  document.querySelectorAll("#categories button").forEach(b=>b.classList.remove("category-active"));
   el.classList.add("category-active");
 }
 
-// SEARCH
 document.getElementById("searchInput").addEventListener("input", applyFilter);
 
 // RENDER
-function renderThemes(data) {
-  const container = document.getElementById("themes");
-  container.innerHTML = "";
+function renderThemes(data){
+  const container=document.getElementById("themes");
+  container.innerHTML="";
 
-  data.forEach(t => {
-    container.innerHTML += `
-      <div class="bg-white rounded shadow">
-        <img src="${t.featured_image}" class="w-full aspect-square object-cover">
-        <div class="p-2 text-sm">
-          <h3 class="font-bold">${t.name}</h3>
-        </div>
+  data.forEach(t=>{
+    container.innerHTML+=`
+    <div class="card">
+      <img src="${t.featured_image}" class="w-full aspect-square object-cover">
+      <div class="p-3">
+        <h3 class="font-bold text-sm">${t.name}</h3>
       </div>
-    `;
+    </div>`;
   });
 }
 
