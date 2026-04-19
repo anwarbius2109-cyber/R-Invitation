@@ -8,34 +8,36 @@
 
   <title>Malirainvitation.co - Undangan Website Murah</title>
 
-  <meta name="description" content="Buat undangan online digital website cepat & elegan" />
+  <meta name="description" content="Undangan digital modern & praktis" />
 
   <link rel="icon" href="favicon.ico" />
-
-  <link rel="stylesheet" href="https://cdn.hugeicons.com/font/hgi-stroke-rounded.css" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-
   <link rel="stylesheet" href="/assets/theme-16.css" />
 </head>
 
 <body>
 
-<!-- HEADER -->
-<header class="sticky top-0 z-50 bg-white">
-  <nav class="max-w-6xl mx-auto px-4 flex justify-between items-center h-16">
-    <div class="flex items-center gap-2">
-      <img src="/assets/Malirainvitation.co.png" width="40">
-      <span class="font-bold">Malirainvitation.co</span>
+<!-- ================= NAVBAR ================= -->
+<header class="sticky top-0 z-50 bg-white border-b">
+  <div class="max-w-6xl mx-auto px-4 flex justify-between items-center h-16">
+    <span class="font-bold">Malirainvitation.co</span>
+
+    <div class="hidden md:flex gap-4 text-sm">
+      <a href="#home">Home</a>
+      <a href="#problem">Problem</a>
+      <a href="#solusi">Solusi</a>
+      <a href="#tema">Tema</a>
+      <a href="#paket">Paket</a>
+      <a href="#faq">FAQ</a>
     </div>
 
     <a href="https://wa.me/6281279281358"
-      class="bg-primary text-white px-4 py-2 rounded">
-      Hubungi Kami
+      class="bg-primary text-white px-4 py-2 rounded text-sm">
+      Hubungi
     </a>
-  </nav>
+  </div>
 </header>
 
-<!-- HERO -->
+<!-- ================= HOME ================= -->
 <section id="home" class="text-center py-24 bg-secondary">
   <h1 class="text-5xl font-bold mb-6">
     Undangan Digital Modern
@@ -50,7 +52,27 @@
   </a>
 </section>
 
-<!-- TEMA -->
+<!-- ================= PROBLEM ================= -->
+<section id="problem" class="py-16 text-center">
+  <h2 class="text-3xl font-bold max-w-3xl mx-auto">
+    Undangan cetak mahal, ribet, dan susah dibagikan ke tamu jauh.
+  </h2>
+</section>
+
+<!-- ================= SOLUSI ================= -->
+<section id="solusi" class="py-16 bg-secondary text-center">
+  <h2 class="text-3xl font-bold mb-10">
+    Solusi Undangan Digital
+  </h2>
+
+  <div class="grid md:grid-cols-3 gap-6 max-w-5xl mx-auto">
+    <div class="p-6 bg-white rounded shadow">500+ Tema</div>
+    <div class="p-6 bg-white rounded shadow">RSVP & Buku Tamu</div>
+    <div class="p-6 bg-white rounded shadow">Galeri Foto</div>
+  </div>
+</section>
+
+<!-- ================= TEMA ================= -->
 <section id="tema" class="py-16">
   <div class="max-w-6xl mx-auto px-4">
 
@@ -61,7 +83,6 @@
     <div id="themes"
       class="grid grid-cols-2 md:grid-cols-4 gap-4"></div>
 
-    <!-- LOAD MORE -->
     <div class="text-center mt-6">
       <button id="loadMoreBtn"
         class="bg-primary text-white px-6 py-2 rounded">
@@ -72,51 +93,87 @@
   </div>
 </section>
 
-<!-- SOSMED -->
-<section class="sosmed-fix">
-  <h2>Follow Sosmed Kami</h2>
+<!-- ================= PAKET ================= -->
+<section id="paket" class="py-16 bg-secondary">
+  <div class="max-w-6xl mx-auto px-4 text-center">
+    <h2 class="text-3xl font-bold mb-10">Paket Harga</h2>
 
-  <div class="sosmed-icons">
-    <a href="https://instagram.com/malirainvitation.co"><i class="fab fa-instagram"></i></a>
-    <a href="https://wa.me/6281279281358"><i class="fab fa-whatsapp"></i></a>
+    <div class="grid md:grid-cols-3 gap-6">
+
+      <div class="bg-white p-6 rounded shadow">
+        <h3 class="font-bold text-xl">Basic</h3>
+        <p class="text-3xl my-3">65K</p>
+        <a href="https://wa.me/6281279281358?text=Basic"
+          class="bg-primary text-white px-4 py-2 rounded block">
+          Pesan
+        </a>
+      </div>
+
+      <div class="bg-white p-6 rounded shadow">
+        <h3 class="font-bold text-xl">Premium</h3>
+        <p class="text-3xl my-3">75K</p>
+        <a href="https://wa.me/6281279281358?text=Premium"
+          class="bg-primary text-white px-4 py-2 rounded block">
+          Pesan
+        </a>
+      </div>
+
+      <div class="bg-white p-6 rounded shadow">
+        <h3 class="font-bold text-xl">Prioritas</h3>
+        <p class="text-3xl my-3">100K</p>
+        <a href="https://wa.me/6281279281358?text=Prioritas"
+          class="bg-primary text-white px-4 py-2 rounded block">
+          Pesan
+        </a>
+      </div>
+
+    </div>
   </div>
 </section>
 
-<!-- FOOTER -->
+<!-- ================= FAQ ================= -->
+<section id="faq" class="py-16 text-center">
+  <h2 class="text-3xl font-bold mb-6">FAQ</h2>
+
+  <div class="max-w-xl mx-auto space-y-3">
+    <details class="border p-3 rounded">
+      <summary>Berapa lama proses?</summary>
+      <p>Kurang dari 1 jam.</p>
+    </details>
+
+    <details class="border p-3 rounded">
+      <summary>Apakah unlimited?</summary>
+      <p>Ya, bebas kirim.</p>
+    </details>
+  </div>
+</section>
+
+<!-- ================= SOSMED ================= -->
+<section class="text-center py-12 bg-gray-100">
+  <h2 class="mb-4">Follow Kami</h2>
+  <a href="https://instagram.com/malirainvitation.co">Instagram</a>
+</section>
+
+<!-- ================= FOOTER ================= -->
 <footer class="text-center py-6 text-gray-500">
   © Malirainvitation.co
 </footer>
 
-<!-- SCRIPT -->
+<!-- ================= SCRIPT CEPAT ================= -->
 <script>
 const baseUrl = "https://webinvit.id";
 const phoneNumber = "6281279281358";
 
 let nextPageUrl = baseUrl + "/seller/api/v1/products/websites?limit=12";
-let allThemes = [];
 
-// LOAD FIRST
+// LOAD AWAL
 async function loadThemes() {
-  const container = document.getElementById("themes");
+  const res = await fetch(nextPageUrl);
+  const json = await res.json();
 
-  container.innerHTML = `
-    <div class="col-span-4 text-center py-10 animate-pulse">
-      Loading tema...
-    </div>
-  `;
+  nextPageUrl = json.data.next_page_url;
 
-  try {
-    const res = await fetch(nextPageUrl);
-    const json = await res.json();
-
-    allThemes = json.data.data;
-    nextPageUrl = json.data.next_page_url;
-
-    renderThemes(allThemes, true);
-
-  } catch {
-    container.innerHTML = "Gagal load";
-  }
+  renderThemes(json.data.data);
 }
 
 // LOAD MORE
@@ -128,83 +185,33 @@ async function loadMore() {
 
   nextPageUrl = json.data.next_page_url;
 
-  renderThemes(json.data.data, false);
+  renderThemes(json.data.data);
 }
 
 // RENDER
-function renderThemes(data, clear = false) {
+function renderThemes(data) {
   const container = document.getElementById("themes");
 
-  if (clear) container.innerHTML = "";
-
-  data.forEach(theme => {
-    const card = document.createElement("div");
-
-    card.innerHTML = `
-      <div class="bg-white rounded shadow hover:shadow-lg transition">
-        <img loading="lazy" src="${theme.featured_image}" class="w-full aspect-square object-cover">
+  data.forEach(t => {
+    container.innerHTML += `
+      <div class="bg-white rounded shadow">
+        <img loading="lazy" src="${t.featured_image}" class="w-full aspect-square object-cover">
         <div class="p-2">
-          <h3 class="font-bold text-sm">${theme.name}</h3>
+          <h3 class="font-bold text-sm">${t.name}</h3>
           <div class="grid grid-cols-2 gap-2 mt-2 text-xs">
-            <a href="${baseUrl}/preview/${theme.slug}" target="_blank" class="bg-gray-200 text-center rounded p-1">Preview</a>
-            <a href="https://wa.me/${phoneNumber}?text=Pesan ${theme.name}" target="_blank" class="bg-purple-600 text-white text-center rounded p-1">Pesan</a>
+            <a href="${baseUrl}/preview/${t.slug}" target="_blank" class="bg-gray-200 p-1 text-center rounded">Preview</a>
+            <a href="https://wa.me/${phoneNumber}?text=Pesan ${t.name}" target="_blank" class="bg-purple-600 text-white p-1 text-center rounded">Pesan</a>
           </div>
         </div>
       </div>
     `;
-
-    container.appendChild(card);
   });
 }
 
-// SEARCH
-document.getElementById("searchInput").addEventListener("input", function () {
-  const keyword = this.value.toLowerCase();
+document.getElementById("loadMoreBtn").onclick = loadMore;
 
-  const filtered = allThemes.filter(t =>
-    t.name.toLowerCase().includes(keyword)
-  );
-
-  renderThemes(filtered, true);
-});
-
-// BUTTON
-document.getElementById("loadMoreBtn").addEventListener("click", loadMore);
-
-// INIT
 loadThemes();
 </script>
-
-<!-- STYLE -->
-<style>
-.sosmed-fix {
-  text-align:center;
-  padding:60px;
-  background:#f5f5f5;
-}
-
-.sosmed-icons {
-  display:flex;
-  justify-content:center;
-  gap:20px;
-}
-
-.sosmed-icons a {
-  width:50px;
-  height:50px;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  border-radius:50%;
-  background:#eee;
-  font-size:20px;
-  transition:0.3s;
-}
-
-.sosmed-icons a:hover {
-  transform:scale(1.2);
-}
-</style>
 
 </body>
 </html>
