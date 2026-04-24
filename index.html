@@ -935,16 +935,19 @@ loadAllThemes();
   left: 0;
   width: 100%;
 
-  /* ikut warna theme */
-  background: var(--primary);
+  /* fallback + theme */
+  background: var(--primary, #6d28d9);
 
   display: none;
   justify-content: space-around;
   padding: 10px 4px;
   z-index: 9999;
 
-  /* biar jelas & tidak transparan */
-  box-shadow: 0 -4px 15px rgba(0,0,0,0.25);
+  /* BIAR NGGAK TRANSPARAN */
+  opacity: 1 !important;
+
+  /* shadow biar keliatan */
+  box-shadow: 0 -4px 15px rgba(0,0,0,0.3);
 }
 
 /* ITEM MENU */
