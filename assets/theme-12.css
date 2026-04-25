@@ -2,103 +2,96 @@
 
 body {
   background: radial-gradient(circle at top, #1a0f2e, #0f061a);
-  color: #f5e6b3; /* GOLD SOFT */
+  color: #f5e6b3;
   line-height: 1.6;
   font-family: "Urbanist", sans-serif;
 }
 
-/* HEADING */
+/* HEADING (LEBIH SOFT) */
 h1, h2, h3 {
   font-family: "Instrument Serif", serif;
   font-weight: normal;
   color: #f7e7a1;
-  text-shadow: 0 0 10px rgba(255, 215, 0, 0.25);
+  text-shadow: 0 0 6px rgba(255, 215, 0, 0.15);
 }
 
 h1 {
   color: #ffd86b;
-  text-shadow: 0 0 12px rgba(255, 215, 0, 0.4);
+  text-shadow: 0 0 8px rgba(255, 215, 0, 0.25);
 }
 
-/* PRIMARY BUTTON (GOLD GLOW) */
+/* PRIMARY BUTTON (SOFT GLOW) */
 .bg-primary {
   background: linear-gradient(135deg, #d4af37, #f7e7a1);
   color: #1a0f2e;
-  box-shadow: 0 0 15px rgba(212, 175, 55, 0.5);
-  animation: glowBlink 2s infinite;
+  box-shadow: 0 0 8px rgba(212, 175, 55, 0.25);
+  animation: glowBlink 3s ease-in-out infinite;
 }
 
-/* HOVER */
+/* HOVER (LEMBUT) */
 .hover\:bg-primary:hover {
-  background: linear-gradient(135deg, #e6c458, #fff2b3);
+  background: linear-gradient(135deg, #e0c15a, #fff2b3);
+  box-shadow: 0 0 12px rgba(212, 175, 55, 0.35);
 }
 
 /* SECONDARY */
 .bg-secondary {
-  background: rgba(212, 175, 55, 0.08);
-  color: #f5e6b3;
-  border: 1px solid rgba(212, 175, 55, 0.25);
-}
-
-/* CARD */
-.bg-card {
-  background: rgba(255, 255, 255, 0.05);
-  backdrop-filter: blur(12px);
+  background: rgba(212, 175, 55, 0.06);
   color: #f5e6b3;
   border: 1px solid rgba(212, 175, 55, 0.2);
-  box-shadow: 0 0 20px rgba(212, 175, 55, 0.15);
+}
+
+/* CARD (MINIMAL GLOW) */
+.bg-card {
+  background: rgba(255, 255, 255, 0.04);
+  backdrop-filter: blur(10px);
+  color: #f5e6b3;
+  border: 1px solid rgba(212, 175, 55, 0.15);
+  box-shadow: 0 0 12px rgba(212, 175, 55, 0.1);
   transition: 0.3s;
 }
 
 .bg-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 0 35px rgba(212, 175, 55, 0.35);
+  transform: translateY(-3px);
+  box-shadow: 0 0 18px rgba(212, 175, 55, 0.2);
 }
 
 /* NAVBAR */
 .navbar {
-  background: rgba(15, 6, 26, 0.7);
-  backdrop-filter: blur(10px);
+  background: rgba(15, 6, 26, 0.75);
+  backdrop-filter: blur(8px);
   color: #f5e6b3;
-  border-bottom: 1px solid rgba(212, 175, 55, 0.2);
+  border-bottom: 1px solid rgba(212, 175, 55, 0.15);
 }
 
-/* TEXT GRADIENT (GOLD LUXURY) */
+/* TEXT GRADIENT (TIDAK TERLALU TERANG) */
 .text-gradient {
-  background-image: linear-gradient(45deg, #b8860b, #ffd86b, #fff3b0);
+  background-image: linear-gradient(45deg, #c9a63a, #ffd86b);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-  background-size: 200% 200%;
-  animation: gradientMove 4s ease infinite;
 }
 
-@keyframes gradientMove {
-  0% { background-position: 0% 50%; }
-  50% { background-position: 100% 50%; }
-  100% { background-position: 0% 50%; }
-}
-
-/* BLINK GOLD */
+/* GLOW ANIMATION (DIREDAM) */
 @keyframes glowBlink {
   0% {
-    box-shadow: 0 0 10px #d4af37, 0 0 20px #d4af37;
+    box-shadow: 0 0 6px rgba(212, 175, 55, 0.2);
   }
   50% {
-    box-shadow: 0 0 25px #ffd86b, 0 0 45px #ffd86b;
+    box-shadow: 0 0 12px rgba(212, 175, 55, 0.3);
   }
   100% {
-    box-shadow: 0 0 10px #d4af37, 0 0 20px #d4af37;
+    box-shadow: 0 0 6px rgba(212, 175, 55, 0.2);
   }
 }
 
-/* OPTIONAL TEXT BLINK */
+/* OPTIONAL TEXT BLINK (LEBIH HALUS) */
 .blink-text {
-  animation: textBlink 1.5s infinite;
+  animation: textBlink 2s ease-in-out infinite;
 }
 
 @keyframes textBlink {
   0%, 100% { opacity: 1; }
-  50% { opacity: 0.6; }
+  50% { opacity: 0.75; }
 }
 
 /* BUTTON */
