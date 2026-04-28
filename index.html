@@ -934,7 +934,15 @@ async function loadCategories() {
       applyFilter();
     };
     container.appendChild(allBtn);
-
+// 🔥 TAMBAH DI SINI
+const popularBtn = document.createElement("button");
+popularBtn.textContent = "🔥 Populer";
+popularBtn.onclick = function () {
+  currentCategoryId = "popular";
+  setActive(this);
+  renderPopularThemes();
+};
+container.appendChild(popularBtn);
     categories.forEach(function(cat) {
 
   // ❌ HAPUS KATEGORI SYUKURAN (atau kosong)
