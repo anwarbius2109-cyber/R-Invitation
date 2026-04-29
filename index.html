@@ -647,7 +647,22 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
 <style>
+/* === ANIMASI HURUF MASUK === */
+.animate-text span {
+  display: inline-block;
+  opacity: 0;
+  transform: translateY(30px);
+  filter: blur(8px);
+  animation: upFade 0.6s ease forwards;
+}
 
+@keyframes upFade {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+    filter: blur(0);
+  }
+}
 /* ===== CATEGORY STYLE (TARUH DI SINI) ===== */
 #categories {
   display: grid;
