@@ -993,20 +993,44 @@ function setActive(el) {
 loadCategories();
 loadAllThemes();
 // === ANIMASI TEXT HERO ===
-function splitTextAnimation(id) {
+
+  function splitTextAnimation(id) {
   const el = document.getElementById(id);
-  const text = el.innerText;
+
+  function animateNode(node) {
+    if (node.nodeType === 3) { // text node
+      const text = node.textContent;
+      const frag = document.createDocumentFragment();
+
+      text.split("").forEach((char, i) => {
+        const span = document.createElement("span");
+        span.textContent = char === " " ? "\u00A0" : char;
+        span.style.animationDelay = (i * 0.03) + "s";
+        frag.appendChild(span);
+      });
+
+      return frag;
+    }
+
+    if (node.nodeType === 1) { // element (contoh: span gradient)
+      const clone = node.cloneNode(false);
+      node.childNodes.forEach(child => {
+        clone.appendChild(animateNode(child));
+      });
+      return clone;
+    }
+
+    return document.createTextNode("");
+  }
+
+  const newContent = document.createDocumentFragment();
+  el.childNodes.forEach(node => {
+    newContent.appendChild(animateNode(node));
+  });
 
   el.innerHTML = "";
-
-  text.split("").forEach((char, i) => {
-    const span = document.createElement("span");
-    span.innerText = char === " " ? "\u00A0" : char;
-    span.style.animationDelay = (i * 0.03) + "s";
-    el.appendChild(span);
-  });
+  el.appendChild(newContent);
 }
-
 // jalankan saat halaman load
 window.addEventListener("load", function () {
   splitTextAnimation("heroText");
