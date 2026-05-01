@@ -32,8 +32,50 @@
     <link rel="stylesheet" href="/assets/theme-16.css" />
   </head>
   <body>
-    <header class="sticky top-0 z-100">
+   <header class="sticky top-0 z-50 bg-white shadow navbar">
 
+  <div class="max-w-7xl mx-auto px-6 flex items-center justify-between h-16">
+
+    <!-- LOGO -->
+    <div class="flex items-center gap-2">
+      <img src="/favicon.ico" alt="logo" class="h-8 w-8">
+      <span class="font-bold text-lg">MSA</span>
+    </div>
+
+    <!-- MENU DESKTOP -->
+    <ul class="hidden md:flex gap-6 font-medium">
+      <li><a href="#home">Home</a></li>
+      <li><a href="#tema">Tema</a></li>
+      <li><a href="#portfolio">Portfolio</a></li>
+      <li><a href="#paket">Paket</a></li>
+    </ul>
+
+    <!-- MENU BUTTON MOBILE -->
+    <button id="menuBtn" class="md:hidden text-2xl">
+      ☰
+    </button>
+
+  </div>
+
+  <!-- MOBILE MENU -->
+  <div id="mobileMenu" class="fixed inset-0 bg-black/50 hidden z-50">
+
+    <div class="bg-white w-64 h-full p-6">
+
+      <button id="closeMenu" class="mb-6 text-xl">✕</button>
+
+      <ul class="flex flex-col gap-4 font-medium">
+        <li><a href="#home">Home</a></li>
+        <li><a href="#tema">Tema</a></li>
+        <li><a href="#portfolio">Portfolio</a></li>
+        <li><a href="#paket">Paket</a></li>
+      </ul>
+
+    </div>
+
+  </div>
+
+</header>
     <section
       id="home"
       class="hero py-20 md:py-32 text-center bg-secondary border-b border-secondary flex flex-col justify-center"
